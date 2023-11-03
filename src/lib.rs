@@ -6,7 +6,7 @@ pub trait DynHash {
     fn hash(&self, state: &mut dyn Hasher);
 }
 
-impl<T: Hash> DynHash for T {
+impl<T: Hash + ?Sized> DynHash for T {
     fn hash(&self, mut state: &mut dyn Hasher) {
         Hash::hash(self, &mut state);
     }
