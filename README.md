@@ -31,6 +31,23 @@ struct Container {
 }
 ```
 
+Without the dyn-hash crate, a trait `trait MyTrait: std::hash::Hash {...}` would
+not be object-safe (`dyn MyTrait`).
+
+```console
+error[E0038]: the trait `MyTrait` cannot be made into an object
+ --> src/main.rs:7:12
+  |
+7 |     let _: &dyn MyTrait;
+  |            ^^^^^^^^^^^^ `MyTrait` cannot be made into an object
+  |
+note: for a trait to be "object safe" it needs to allow building a vtable to allow the call to be resolvable dynamically; for more information visit <https://doc.rust-lang.org/reference/items/traits.html#object-safety>
+ --> $SYSROOT/lib/rustlib/src/rust/library/core/src/hash/mod.rs
+  |
+  |     fn hash<H: Hasher>(&self, state: &mut H);
+  |        ^^^^ ...because method `hash` has generic type parameters
+```
+
 <br>
 
 #### License
