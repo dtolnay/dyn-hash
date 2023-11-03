@@ -1,3 +1,26 @@
+//! This crate provides a [`DynHash`] trait that can be used in trait objects.
+//! Types that implement the standard library's [`std::hash::Hash`] trait are
+//! automatically usable by a `DynHash` trait object.
+//!
+//! # Example
+//!
+//! ```
+//! use dyn_hash::DynHash;
+//!
+//! trait MyTrait: DynHash {
+//!     /* ... */
+//! }
+//!
+//! // Implement std::hash::Hash for dyn MyTrait
+//! dyn_hash::hash_trait_object!(MyTrait);
+//!
+//! // Now data structures containing Box<dyn MyTrait> can derive Hash:
+//! #[derive(Hash)]
+//! struct Container {
+//!     trait_object: Box<dyn MyTrait>,
+//! }
+//! ```
+
 mod macros;
 
 use core::hash::{Hash, Hasher};
