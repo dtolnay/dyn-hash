@@ -12,6 +12,7 @@ repository = "https://github.com/dtolnay/dyn-hash"
 rust-version = "1.56"
 
 [dev-dependencies]
+rustversion = "1"
 trybuild = "1"
 
 [lib]
