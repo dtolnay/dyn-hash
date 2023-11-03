@@ -29,7 +29,7 @@
 //! }
 //! ```
 
-#![doc(html_root_url = "https://docs.rs/dyn-hash/0.0.0")]
+#![doc(html_root_url = "https://docs.rs/dyn-hash/0.1.0")]
 #![no_std]
 
 #[cfg(doc)]
