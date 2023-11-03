@@ -2,6 +2,7 @@ mod macros;
 
 use core::hash::{Hash, Hasher};
 
+/// This trait is implemented for any type that implements [`std::hash::Hash`].
 pub trait DynHash {
     fn hash(&self, state: &mut dyn Hasher);
 }

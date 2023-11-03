@@ -1,3 +1,34 @@
+/// Implement the standard library `Hash` for a trait object that has `DynHash`
+/// as a supertrait.
+///
+/// ```
+/// use dyn_hash::DynHash;
+///
+/// trait MyTrait: DynHash {
+///     /* ... */
+/// }
+///
+/// dyn_hash::hash_trait_object!(MyTrait);
+///
+/// // Now data structures containing Box<dyn MyTrait> can derive Hash.
+/// #[derive(Hash)]
+/// struct Container {
+///     trait_object: Box<dyn MyTrait>,
+/// }
+/// ```
+///
+/// The macro supports traits that have type parameters and/or `where` clauses.
+///
+/// ```
+/// use dyn_hash::DynHash;
+/// use std::io::Read;
+///
+/// trait Difficult<R>: DynHash where R: Read {
+///     /* ... */
+/// }
+///
+/// dyn_hash::hash_trait_object!(<R> Difficult<R> where R: Read);
+/// ```
 #[macro_export]
 macro_rules! hash_trait_object {
     ($($path:tt)+) => {
