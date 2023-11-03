@@ -1,6 +1,6 @@
 [package]
 name = "dyn-hash"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["David Tolnay <dtolnay@gmail.com>"]
 categories = ["rust-patterns", "no-std"]
 description = "Hash trait that is object-safe"
