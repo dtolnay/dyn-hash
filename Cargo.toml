@@ -11,6 +11,10 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/dtolnay/dyn-hash"
 rust-version = "1.56"
 
+[dev-dependencies]
+rustversion = "1"
+trybuild = { version = "1", features = ["diff"] }
+
 [lib]
 doc-scrape-examples = false
 
