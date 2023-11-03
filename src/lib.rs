@@ -32,6 +32,9 @@
 #![doc(html_root_url = "https://docs.rs/dyn-hash/0.0.0")]
 #![no_std]
 
+#[cfg(doc)]
+extern crate core as std;
+
 mod macros;
 
 use core::hash::{Hash, Hasher};
