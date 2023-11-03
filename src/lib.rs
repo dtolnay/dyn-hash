@@ -1,3 +1,5 @@
+mod macros;
+
 use core::hash::{Hash, Hasher};
 
 pub trait DynHash {
@@ -10,8 +12,11 @@ impl<T: Hash> DynHash for T {
     }
 }
 
-impl Hash for dyn DynHash {
-    fn hash<H: Hasher>(&self, state: &mut H) {
-        DynHash::hash(self, state);
-    }
+hash_trait_object!(DynHash);
+
+// Not public API. Referenced by macro-generated code.
+#[doc(hidden)]
+pub mod __private {
+    pub use core::hash::{Hash, Hasher};
+    pub use core::marker::{Send, Sync};
 }
