@@ -29,6 +29,8 @@
 //! }
 //! ```
 
+#![doc(html_root_url = "https://docs.rs/dyn-hash/0.0.0")]
+
 mod macros;
 
 use core::hash::{Hash, Hasher};
