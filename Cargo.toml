@@ -1,7 +1,15 @@
 [package]
 name = "dyn-hash"
 version = "0.0.0"
+authors = ["David Tolnay <dtolnay@gmail.com>"]
+categories = ["rust-patterns", "no-std"]
+description = "Hash trait that is object-safe"
+documentation = "https://docs.rs/dyn-hash"
 edition = "2021"
+keywords = ["dyn", "hash", "trait-object"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/dtolnay/dyn-hash"
+rust-version = "1.56"
 
 [lib]
 doc-scrape-examples = false
