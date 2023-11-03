@@ -40,7 +40,7 @@ mod macros;
 use core::hash::{Hash, Hasher};
 
 /// This trait is implemented for any type that implements [`std::hash::Hash`].
-pub trait DynHash {
+pub trait DynHash: sealed::Sealed {
     fn hash(&self, state: &mut dyn Hasher);
 }
 
@@ -57,4 +57,11 @@ hash_trait_object!(DynHash);
 pub mod __private {
     pub use core::hash::{Hash, Hasher};
     pub use core::marker::{Send, Sync};
+}
+
+mod sealed {
+    use core::hash::Hash;
+
+    pub trait Sealed {}
+    impl<T: Hash + ?Sized> Sealed for T {}
 }
