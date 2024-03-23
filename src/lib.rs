@@ -52,17 +52,17 @@
 #[cfg(doc)]
 extern crate core as std;
 
-mod macros;
-
 use core::hash::{Hash, Hasher};
+
+mod macros;
 
 /// This trait is implemented for any type that implements [`std::hash::Hash`].
 pub trait DynHash: sealed::Sealed {
-    fn hash(&self, state: &mut dyn Hasher);
+    fn dyn_hash(&self, state: &mut dyn Hasher);
 }
 
 impl<T: Hash + ?Sized> DynHash for T {
-    fn hash(&self, mut state: &mut dyn Hasher) {
+    fn dyn_hash(&self, mut state: &mut dyn Hasher) {
         Hash::hash(self, &mut state);
     }
 }

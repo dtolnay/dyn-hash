@@ -88,22 +88,22 @@ macro_rules! __internal_hash_trait_object {
     (impl ($($generics:tt)*) ($($path:tt)*) ($($bound:tt)*)) => {
         impl<'hash, $($generics)*> $crate::__private::Hash for dyn $($path)* + 'hash where $($bound)* {
             fn hash<H: $crate::__private::Hasher>(&self, state: &mut H) {
-                $crate::DynHash::hash(self, state);
+                $crate::DynHash::dyn_hash(self, state);
             }
         }
         impl<'hash, $($generics)*> $crate::__private::Hash for dyn $($path)* + $crate::__private::Send + 'hash where $($bound)* {
             fn hash<H: $crate::__private::Hasher>(&self, state: &mut H) {
-                $crate::DynHash::hash(self, state);
+                $crate::DynHash::dyn_hash(self, state);
             }
         }
         impl<'hash, $($generics)*> $crate::__private::Hash for dyn $($path)* + $crate::__private::Sync + 'hash where $($bound)* {
             fn hash<H: $crate::__private::Hasher>(&self, state: &mut H) {
-                $crate::DynHash::hash(self, state);
+                $crate::DynHash::dyn_hash(self, state);
             }
         }
         impl<'hash, $($generics)*> $crate::__private::Hash for dyn $($path)* + $crate::__private::Send + $crate::__private::Sync + 'hash where $($bound)* {
             fn hash<H: $crate::__private::Hasher>(&self, state: &mut H) {
-                $crate::DynHash::hash(self, state);
+                $crate::DynHash::dyn_hash(self, state);
             }
         }
     };
