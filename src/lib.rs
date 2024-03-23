@@ -46,7 +46,7 @@
 //!   |        ^^^^ ...because method `hash` has generic type parameters
 //! ```
 
-#![doc(html_root_url = "https://docs.rs/dyn-hash/0.1.2")]
+#![doc(html_root_url = "https://docs.rs/dyn-hash/0.2.0")]
 #![no_std]
 
 #[cfg(doc)]
