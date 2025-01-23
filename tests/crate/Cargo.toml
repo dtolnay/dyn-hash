@@ -1,0 +1,12 @@
+[package]
+name = "dyn_hash_test"
+version = "0.0.0"
+authors = ["David Tolnay <dtolnay@gmail.com>"]
+edition = "2021"
+publish = false
+
+[lib]
+path = "test.rs"
+
+[dependencies]
+dyn-hash = { path = "../.." }
