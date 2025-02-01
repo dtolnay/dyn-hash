@@ -1,5 +1,5 @@
-Hash trait that is object-safe
-==============================
+Hash trait that is dyn-compatible
+=================================
 
 [<img alt="github" src="https://img.shields.io/badge/github-dtolnay/dyn--hash-8da0cb?style=for-the-badge&labelColor=555555&logo=github" height="20">](https://github.com/dtolnay/dyn-hash)
 [<img alt="crates.io" src="https://img.shields.io/crates/v/dyn-hash.svg?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/dyn-hash)
@@ -32,7 +32,7 @@ struct Container {
 ```
 
 Without the dyn-hash crate, a trait `trait MyTrait: std::hash::Hash {...}` would
-not be object-safe (`dyn MyTrait`).
+not be dyn-compatible (`dyn MyTrait`).
 
 ```console
 error[E0038]: the trait `MyTrait` is not dyn compatible

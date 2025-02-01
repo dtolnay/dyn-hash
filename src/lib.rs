@@ -30,7 +30,7 @@
 //! ```
 //!
 //! Without the dyn-hash crate, a trait `trait MyTrait: std::hash::Hash {...}`
-//! would not be object-safe (`dyn MyTrait`).
+//! would not be dyn-compatible (`dyn MyTrait`).
 //!
 //! ```text
 //! error[E0038]: the trait `MyTrait` is not dyn compatible
