@@ -33,14 +33,15 @@
 //! would not be object-safe (`dyn MyTrait`).
 //!
 //! ```text
-//! error[E0038]: the trait `MyTrait` cannot be made into an object
+//! error[E0038]: the trait `MyTrait` is not dyn compatible
 //!  --> src/main.rs:7:12
 //!   |
 //! 7 |     let _: &dyn MyTrait;
-//!   |            ^^^^^^^^^^^^ `MyTrait` cannot be made into an object
+//!   |            ^^^^^^^^^^^^ `MyTrait` is not dyn compatible
 //!   |
-//! note: for a trait to be "object safe" it needs to allow building a vtable to allow the call to be resolvable dynamically; for more information visit <https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility>
-//!  --> $SYSROOT/lib/rustlib/src/rust/library/core/src/hash/mod.rs
+//! note: for a trait to be dyn compatible it needs to allow building a vtable
+//!       for more information, visit <https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility>
+//!  --> $SYSROOT/lib/rustlib/src/rust/library/core/src/hash/mod.rs:199:8
 //!   |
 //!   |     fn hash<H: Hasher>(&self, state: &mut H);
 //!   |        ^^^^ ...because method `hash` has generic type parameters
