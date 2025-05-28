@@ -1,8 +1,8 @@
 error[E0038]: the trait `MyTrait` is not dyn compatible
- --> tests/ui/readme.rs:8:12
+ --> tests/ui/readme.rs:8:17
   |
 8 |     let _: &dyn MyTrait;
-  |            ^^^^^^^^^^^^ `MyTrait` is not dyn compatible
+  |                 ^^^^^^^ `MyTrait` is not dyn compatible
   |
 note: for a trait to be dyn compatible it needs to allow building a vtable
       for more information, visit <https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility>
