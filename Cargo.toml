@@ -9,7 +9,7 @@ edition = "2021"
 keywords = ["dyn", "hash", "trait-object", "object-safe"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/dtolnay/dyn-hash"
-rust-version = "1.56"
+rust-version = "1.68"
 
 [dev-dependencies]
 rustversion = "1"
