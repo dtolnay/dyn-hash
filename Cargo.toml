@@ -13,7 +13,7 @@ rust-version = "1.68"
 
 [dev-dependencies]
 rustversion = "1"
-trybuild = { version = "1.0.108", features = ["diff"] }
+trybuild = { version = "1.0.125", features = ["diff"] }
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
